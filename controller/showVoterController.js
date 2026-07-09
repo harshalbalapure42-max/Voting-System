@@ -2,6 +2,7 @@ const path = require ("path") ;
 const { connection } = require ("../model/config/db") ; 
 const { show } = require ("../model/showVoterModel") ; 
 const showVoters = (req, resp) => { 
+    if (!req.session.username) return resp.send ("Login first.") ; 
     connection.query ("select * from voter", (err, result) => { 
         if (err) { 
             console.log (err) ; 
@@ -15,6 +16,7 @@ const showVoters = (req, resp) => {
             <td>${result[i].name}</td>
             <td>${result[i].surname}</td>
             <td>${result[i].age}</td>
+            <td>${result[i].vote}</td>
             </tr>
             `
         }
@@ -29,6 +31,7 @@ const showVoters = (req, resp) => {
             <th>Name</th>
             <th>Surname</th>
             <th>Age</th>
+            <th>Vote</th>
             ${rows} ; 
         </table>
     </body>

@@ -2,6 +2,7 @@ const { connection } = require ("../model/config/db") ;
 const { voters } = require ("../model/rejectedVotersModel") ; 
 const path = require ("path") ; 
 const rejectedVoters = (req, resp) => {
+    if (!req.session.username) return resp.send ("Login first.") ; 
     connection.query ("select * from rejectedVoters", (err, result) => { 
         if (err) { 
             return console.log (err) ; 

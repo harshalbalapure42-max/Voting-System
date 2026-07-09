@@ -18,7 +18,8 @@ const party = (req, resp) => {
                 return resp.send ("Database error.") ; 
             }
             else if (!result) return resp.send ("Incorrect Info.") ; 
-            else resp.send (`
+            req.session.voterId = user.voterId ; 
+             resp.send (`
                 <html> 
     <head>
         <link rel = "stylesheet" href = "/party.css"> 

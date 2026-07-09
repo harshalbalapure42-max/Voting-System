@@ -2,6 +2,7 @@ const path = require ("path") ;
 const { connection } = require ("../model/config/db") ; 
 const { showVoter } = require ("../model/showModel") ; 
 const show = (req, resp) => { 
+    if (!req.session.username) return resp.send ("Login first") ; 
     connection.query ("select * from register", (err, result) => { 
         if (err) { 
             console.log (err) ; 
