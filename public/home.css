@@ -1,0 +1,25 @@
+* { 
+    margin : 0% ; 
+    padding : 0% ; 
+}
+html, body { 
+    height : 100% ; 
+    width : 100% ; 
+    display : flex ; 
+    align-items : center ; 
+    justify-content : center ; 
+    flex-direction : column ; 
+    background-color : beige ; 
+}
+button { 
+    height : 60px ; 
+    width : 300px ; 
+    border : none ; 
+    border-radius : 40px ; 
+    background-color : green ; 
+    color : white ; 
+    font-size : 23px ; 
+}
+button:hover { 
+    background-color : rgb(5, 72, 5) ; 
+}

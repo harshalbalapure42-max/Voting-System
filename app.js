@@ -1,0 +1,53 @@
+require ("dotenv").config () ; 
+const ex = require ("express") ; 
+const app = ex () ; 
+const cookieParser = require ("cookie-parser") ; 
+const session = require ("express-session") ; 
+app.use (ex.json()) ; 
+app.use (ex.urlencoded ( { extended : true } ) ) ; 
+app.use (cookieParser()) ; 
+app.use (session ( { 
+    secret : process.env.SECRET, 
+    resave : false, 
+    saveUninitialized : false
+})) ; 
+app.use (ex.static ("public")) ; 
+const home = require ("./routes/homeRoute") ;
+const adminLogin = require ("./routes/adminLoginRoute") ; 
+const adminAuth = require ("./routes/adminAuthRoute") ; 
+const voterRegister = require ("./routes/voterRegisterRoute") ;  
+const register = require ("./routes/registerRoute") ; 
+const registeredVoters = require ("./routes/registeredVotersRoute") ;
+const reject = require ("./routes/rejectRoute") ;  
+const rejectedVoters = require ("./routes/rejectedVotersRoute") ; 
+const restore = require ("./routes/restoreRoute") ; 
+const approve = require ("./routes/approveRoute") ; 
+const showVoters = require ("./routes/showVotersRoute") ; 
+const del = require ("./routes/deleteRoute") ;
+const getId = require ("./routes/getIdRoute") ; 
+const showId = require ("./routes/showIdRouts") ; 
+const voterLogin = require ("./routes/voterLoginRoute") ; 
+const vote = require ("./routes/voteRoute") ; 
+const submitVote = require ("./routes/submitVoteRoute") ; 
+const voteCount = require ("./routes/voteCountRoute") ; 
+const getAdminAuth = require ("./routes/getAdminAuthRoute") ; 
+app.use (home) ; 
+app.use (adminLogin) ;
+app.use (adminAuth) ;  
+app.use (voterRegister) ; 
+app.use (register) ; 
+app.use (registeredVoters) ; 
+app.use (reject) ; 
+app.use (rejectedVoters) ; 
+app.use (restore) ; 
+app.use (approve) ; 
+app.use (showVoters) ; 
+app.use (del) ; 
+app.use (getId) ;
+app.use (showId) ; 
+app.use (voterLogin) ; 
+app.use (vote) ; 
+app.use (submitVote) ; 
+app.use (voteCount) ; 
+app.use (getAdminAuth) ; 
+app.listen (process.env.PORT) ; 

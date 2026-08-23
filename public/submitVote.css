@@ -1,0 +1,42 @@
+* { 
+    margin : 0% ; 
+    padding : 0% ; 
+}
+html, body { 
+    height : 100% ;
+    width : 100% ; 
+    display : flex ; 
+    align-items : center ;
+    justify-content : center ; 
+    background-color : beige ; 
+    flex-direction : column ; 
+    gap : 20px ; 
+}
+div { 
+     display : flex ; 
+    align-items : center ;
+    justify-content : center ; 
+}
+input { 
+    height : 30px ; 
+    width : 30px ; 
+   
+}
+label { 
+    height : 20px ; 
+    width : 20px ; 
+    font-size : 35px ; 
+     margin-left : 50px ; 
+}
+button { 
+    height : 50px ; 
+    width : 200px ; 
+    font-size : 20px ; 
+    background-color : green ; 
+    color : white ; 
+    border : none ; 
+    border-radius : 40px ; 
+}
+button:hover { 
+    background-color : rgb(7, 65, 7) ; 
+}
